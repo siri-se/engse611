@@ -1,0 +1,30 @@
+/* 2 elements color change (link & bold text) */
+a:link{
+    color:blue;
+}
+a:visited{
+    color:violet;
+}
+a:hover{
+    color:pink;
+}
+a:active{
+    color:blueviolet;
+}
+b, strong{
+    color:blueviolet;
+}
+
+/* Change 2 font propeties */
+h1,h2,p,ul,ol{
+    font-family:'Lucida Handwriting', cursive;
+}
+
+h1,h2{
+    color: blueviolet;
+}
+
+/* Change 1 elements (background) */
+body{
+    background-color: rgb(233, 214, 253);
+}

@@ -1,0 +1,25 @@
+.about{
+    display:grid;
+    background-color:rgb(245,172,15);
+    border: 10px black;
+}
+.name{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.second{
+    display:grid;
+    grid: auto/auto auto;
+    background-color: rgb(255,242,204);
+    border: 10px black;
+}
+.second-text{
+   text-align: justify;
+}
+.third{
+    display:grid;
+    grid: auto auto auto/auto auto auto;
+    background-color: rgb(213,232,212);
+    border: 10px black;
+}
