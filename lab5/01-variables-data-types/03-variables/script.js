@@ -60,3 +60,6 @@ console.log(person);
 person.Name = ("nigga");
 person.Email = ("slave@gmail.com");
 console.log(person);
+
+
+

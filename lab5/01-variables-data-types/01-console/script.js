@@ -10,4 +10,4 @@ ee="hh";
 console.log(ee);
 console.log(cat);
 
-console.warn('I love kids')
+console.warn ('I love kids');
