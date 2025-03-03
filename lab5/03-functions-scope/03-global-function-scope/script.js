@@ -1,4 +1,3 @@
-
 const num = 42;
 
 console.log(num, 'in global scope');
@@ -14,12 +13,13 @@ if (true) {
   console.log(num, 'inside block');
 }
 
+// Define `multiplier` globally
+const multiplier = 5;
+
 function calculate() {
   const num = 10;
-  const multiplier = 5;
   console.log(num * multiplier);
 }
 
-console.log(multiplier);
-
+console.log(multiplier); // Now it works because it's defined globally
 calculate();

@@ -14,12 +14,14 @@ function outerFunction() {
   
   if (true) {
     const num = 50;
-  
+    let factor;  // Declare factor in the outer block
+
     if (num === 50) {
-      const factor = 2;
-      console.log(num * factor);
+        factor = 2;  // Assign value inside the inner block
+        console.log(num * factor);  // 100
     }
-  
-    console.log(factor); 
-  }
+
+    console.log(factor);  //2
+}
+
   

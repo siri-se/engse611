@@ -19,9 +19,9 @@
 const value = [];
 
 if (value) {
-  console.log('✅ This is truthy');
+  console.log('This is truthy');
 } else {
-  console.log('❌ This is falsy');
+  console.log('This is falsy');
 }
 
 console.log(`Boolean(value): ${Boolean(value)}`);
