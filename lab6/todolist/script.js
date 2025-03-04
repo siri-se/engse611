@@ -6,8 +6,11 @@ const todoList = document.querySelector("#todo-list");
 let todos = [];
 
 function addTodo() {
-  //console.log("Hello, guys.");
   const todoText = todoInput.value.trim();
+  if (todoText.length > 50) {
+    alert("Task cannot exceed 50 characters.");
+    return;
+  }
   if (todoText.length > 0) {
     const todo = {
       id: Date.now(),
@@ -16,23 +19,20 @@ function addTodo() {
     };
 
     todos.push(todo);
-
     todoInput.value = "";
-
     renderTodos();
   }
 }
 
 function deleteTodo(id) {
-  //console.log(id);
-  todos = todos.filter((todo) => todo.id !== id);
-  renderTodos();
+  const confirmDelete = confirm("Are you sure you want to delete this task?");
+  if (confirmDelete) {
+    todos = todos.filter((todo) => todo.id !== id);
+    renderTodos();
+  }
 }
 
 function toggleCompleted(id) {
-  // console.log(id);
-  //let a = 1;
-  //a = a + 1; //a = 2
   todos = todos.map((todo) => {
     if (todo.id === id) {
       todo.completed = !todo.completed;
@@ -49,23 +49,25 @@ function renderTodos() {
     const todoItem = document.createElement("li");
     const todoText = document.createElement("span");
     const todoDeleteButton = document.createElement("button");
-    const myCheck = document.createElement("INPUT");
-          myCheck.setAttribute("type", "checkbox");
+    const todoCheckbox = document.createElement("input");
 
+    todoCheckbox.setAttribute("type", "checkbox");
+    todoCheckbox.checked = todo.completed;
+    todoCheckbox.addEventListener("change", () => toggleCompleted(todo.id));
+    
     todoText.textContent = todo.text;
-    todoDeleteButton.textContent = "Delete";
-
-    todoDeleteButton.addEventListener("click", () => deleteTodo(todo.id));
-
     if (todo.completed) {
-      todoItem.classList.add("completed");
+      todoText.style.textDecoration = "line-through";
+    } else {
+      todoText.style.textDecoration = "none";
     }
 
-    todoItem.addEventListener("click", () => toggleCompleted(todo.id));
-  
+    todoDeleteButton.textContent = "Delete";
+    todoDeleteButton.addEventListener("click", () => deleteTodo(todo.id));
+
+    todoItem.appendChild(todoCheckbox);
     todoItem.appendChild(todoText);
     todoItem.appendChild(todoDeleteButton);
-
 
     todoList.appendChild(todoItem);
   });

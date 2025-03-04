@@ -1,5 +1,5 @@
-const X_IMAGE_URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1083533/x.png';
-const O_IMAGE_URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1083533/circle.png';
+const X_IMAGE_URL = 'https://clipart-library.com/images/gie5B478T.png';
+const O_IMAGE_URL = 'https://www.pngmart.com/files/23/Green-Circle-PNG-Transparent.png';
 
 let playerWins = 0;
 let botWins = 0;
@@ -15,13 +15,11 @@ function changeToX(event) {
     playerWins++;
     updateScore();
     setTimeout(() => alert('You Win!'), 100);
-    return; 
+    return; // Stops the game
   }
 
   setTimeout(botPlay, 300);
 }
-
-
 
 
 function botPlay() {
@@ -48,16 +46,15 @@ function checkWin(player) {
   const board = Array.from(boxes).map(box => box.children.length ? box.children[0].src : null);
 
   const winPatterns = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], 
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], 
-    [0, 4, 8], [2, 4, 6]             
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+    [0, 4, 8], [2, 4, 6]             // Diagonals
   ];
 
   return winPatterns.some(pattern =>
-    pattern.every(index => board[index] && board[index].includes(player.includes('x.png') ? 'x.png' : 'circle.png'))
+    pattern.every(index => board[index] && board[index].includes(player.includes(X_IMAGE_URL) ? X_IMAGE_URL : O_IMAGE_URL))
   );
 }
-
 
 
 function updateScore() {
