@@ -2,18 +2,18 @@ function createNewItem(item) {
   const li = document.createElement('li');
   li.appendChild(document.createTextNode(item));
 
-  const button = createButton('remove-item btn-link text-red');
+  const button = createButton('delete-item btn-link text-blue');
 
   li.appendChild(button);
 
-  document.querySelector('.items').appendChild(li);
+  document.querySelector('.list').appendChild(li);
 }
 
 function createButton(classes) {
   const button = document.createElement('button');
   button.className = classes;
 
-  const icon = createIcon('fa-solid fa-xmark');
+  const icon = createIcon('fa-solid fa-trash');
   button.appendChild(icon);
 
   return button;
@@ -25,5 +25,5 @@ function createIcon(classes) {
   return icon;
 }
 
-createNewItem('Cheese');
-createNewItem('Sauce');
+createNewItem('Apples');
+createNewItem('Bread');

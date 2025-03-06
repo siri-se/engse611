@@ -9,5 +9,5 @@ li.textContent = 'Insert Me After!';
 // Existing element to insert after
 const firstItem = document.querySelector('li:first-child');
 
-// Our custom function
+// Call the function
 insertAfter(li, firstItem);

@@ -5,7 +5,7 @@ div.setAttribute('title', 'My Element');
 
 // div.innerText = 'Hello World';
 
-const text = document.createTextNode('Hello World');
+const text = document.createTextNode('sup');
 div.appendChild(text);
 
 // document.body.appendChild(div);
