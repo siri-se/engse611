@@ -64,7 +64,7 @@ body {
 }
 
 table {
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
     margin-top: 20px;
 }
@@ -93,11 +93,13 @@ button {
     border : 2px solid black;
     border-radius: 5px;
     width: 80px;
-    height: 40px;
+    height: 35px;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #3c9aff;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .modal {
